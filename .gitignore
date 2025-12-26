@@ -1,0 +1,5 @@
+nav-links.active
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
