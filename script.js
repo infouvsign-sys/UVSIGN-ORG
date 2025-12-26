@@ -68,3 +68,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(style);
 
 });
+function sendWhatsApp() {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !phone) {
+        alert("Name and phone number are required.");
+        return;
+    }
+
+    const whatsappNumber = "919946100722"; // your WhatsApp number
+
+    const whatsappMessage =
+        `Hello, I am ${name}\n` +
+        `Phone: ${phone}\n` +
+        `Service: ${service}\n` +
+        `Message: ${message}`;
+
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+}
